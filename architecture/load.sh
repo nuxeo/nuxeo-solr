@@ -12,7 +12,7 @@ if [ ! -f $TREE_CSV ]; then
 fi
 if [ ! -f $DOCS_CSV ]; then
 	time python gen_tree_csv.py > $DOCS_CSV
-	time curl "http://localhost:8983/solr/update/csv?stream.file=$DOCS_CSV&stream.contentType=text/plain;charset=utf-8&fieldnames=id,tree_id,text&commit=true"
+	time curl "http://localhost:8983/solr/update/csv?stream.file=$DOCS_CSV&stream.contentType=text/plain;charset=utf-8&fieldnames=tree_id,id,text&commit=true"
 fi
 
 
