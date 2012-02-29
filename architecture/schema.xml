@@ -58,10 +58,8 @@
  <fields>
    <field name="id" type="string" indexed="true" stored="true"
      required="true" />
-   <field name="path" type="string" indexed="true" stored="true"
-     required="true" />
-   <field name="tree_id" type="string" indexed="true" stored="true"
-     required="true" />
+   <field name="path" type="string" indexed="true" stored="true" />
+   <field name="tree_id" type="string" indexed="true" stored="true" />
    <field name="text" type="text_general" indexed="true" stored="false"
      termVectors="true" termPositions="true" termOffsets="true" />
    <field name="aclr" type="string" indexed="true" stored="true"

@@ -47,7 +47,7 @@ def gen_personal_acl(num):
 
 def gen_personal_tree():
     for i in xrange(PERSONAL_TREE):
-        print '%s, "%s/%s", "%s"' % (get_perso_id(i), PERSONAL_BASE_PATH, LIPSUM.getUniqWord(), gen_personal_acl(i))
+        print '%s,"%s/%s","%s"' % (get_perso_id(i), PERSONAL_BASE_PATH, LIPSUM.getUniqWord(), gen_personal_acl(i))
 
 
 def gen_main_acl():
@@ -57,7 +57,7 @@ def gen_main_acl():
 
 
 def gen_main_tree():
-    print "id, path, aclr"
+    #print "id, path, aclr"
     lvl = [0, 0, 0, 0, 0]
     path = [MAIN_BASE_PATH, '', '', '', '', '']
     n = 0
@@ -75,7 +75,7 @@ def gen_main_tree():
                     for m in range(FOLDER_PER_LEVEL):
                         lvl = [i, j, k, l, m]
                         path[5] = LIPSUM.getUniqWord()
-                        print '"%s", "%s", "%s"' % (get_id(lvl), '/'.join(path), acls)
+                        print '"%s","%s","%s"' % (get_id(lvl), '/'.join(path), acls)
 
 
 def get_random_id(i):
@@ -89,10 +89,10 @@ def get_random_id(i):
 
 
 def gen_docs():
-    print "tree_id, id, text"
+    #print "tree_id, id, text"
     for i in xrange(DOCS):
         tid = get_random_id(i)
-        print '"%s", "%32.32d", "%s"' % (tid, i, LIPSUM.getParagraph())
+        print '"%s","%32.32d","%s"' % (tid, i, LIPSUM.getParagraph())
 
 
 if __name__ == '__main__':
