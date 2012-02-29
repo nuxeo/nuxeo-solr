@@ -2,6 +2,7 @@
 """
 Generates a csv of the "tree" ready to inject into solr
 """
+import sys
 import random
 from funkload import Lipsum
 
@@ -94,11 +95,9 @@ def gen_docs():
         print '"%s", "%32.32d", "%s"' % (tid, i, LIPSUM.getParagraph())
 
 
-def main():
-    #gen_personal_tree()
-    #gen_main_tree()
-    gen_docs()
-
-
 if __name__ == '__main__':
-    main()
+    if len(sys.argv) > 1 and sys.argv[1] == "tree":
+        gen_personal_tree()
+        gen_main_tree()
+    else:
+        gen_docs()
