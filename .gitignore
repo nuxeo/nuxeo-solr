@@ -3,3 +3,6 @@ bin
 .classpath
 .settings
 .project
+
+# generated files
+architecture/*.csv
