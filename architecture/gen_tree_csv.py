@@ -56,7 +56,7 @@ def gen_main_acl():
 
 
 def gen_main_tree():
-    print "tree_id, path, aclr"
+    print "id, path, aclr"
     lvl = [0, 0, 0, 0, 0]
     path = [MAIN_BASE_PATH, '', '', '', '', '']
     n = 0
@@ -77,9 +77,27 @@ def gen_main_tree():
                         print '"%s", "%s", "%s"' % (get_id(lvl), '/'.join(path), acls)
 
 
+def get_random_id(i):
+    if i % 30:
+        return "%2.2d_%2.2d_%2.2d_%2.2d_%2.2d" % (random.randint(0, FOLDER_PER_LEVEL),
+                                                  random.randint(0, FOLDER_PER_LEVEL),
+                                                  random.randint(0, FOLDER_PER_LEVEL),
+                                                  random.randint(0, FOLDER_PER_LEVEL),
+                                                  random.randint(0, FOLDER_PER_LEVEL))
+    return "99_%6.6d" % random.randint(0, USERS)
+
+
+def gen_docs():
+    print "tree_id, id, text"
+    for i in xrange(DOCS):
+        tid = get_random_id(i)
+        print '"%s", "%32.32d", "%s"' % (tid, i, LIPSUM.getParagraph())
+
+
 def main():
-    gen_personal_tree()
-    gen_main_tree()
+    #gen_personal_tree()
+    #gen_main_tree()
+    gen_docs()
 
 
 if __name__ == '__main__':
