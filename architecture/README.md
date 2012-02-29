@@ -1,4 +1,4 @@
-# Architecture Overview (doc and modelling scripts)
+# Architecture Overview (doc and modeling scripts)
 
 In order to index the Nuxeo ACL into Solr and to avoid reindexing half
 of the repository every time some ones grant a new right to a group on a
