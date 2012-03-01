@@ -27,8 +27,8 @@ only on the tree entries, not on the document entries. Only the `DENY
 Everything Everyone` negative ACE is supported. Other than that only
 positive ACL are handled by the current model. If the support for stacked
 negative ACE is required it could be later implemented with a custom
-Solr QueryParser plugin that would derive from the
-org.apache.solr.search.JoinQParserPlugin further adding the negative
+Solr QueryParser plugin that would derive from
+`org.apache.solr.search.JoinQParserPlugin` further adding the negative
 filtering logic).
 
 The other solr documents hold a `tree_id` (which is foreign reference to the
@@ -36,8 +36,8 @@ parent tree node), the nuxeo doc ref and (optionally the parent ref),
 the indexed fulltext fields. There is one such entry for every single nuxeo
 document in the repository (including the folderish documents).
 
-Searching a document with ACL and/or path filtering happens using a join
-on the 2 types of entries.
+Searching a document with ACL and/or path filtering happens using a
+[join](https://wiki.apache.org/solr/Join) on the 2 types of entries.
 
 Updating ACLs or moving a folder to one workspace to another can happen
 without reindexing the fulltext of all the documents belonging to the
