@@ -27,8 +27,9 @@ only on the tree entries, not on the document entries. Only the `DENY
 Everything Everyone` negative ACE is supported. Other than that only
 positive ACL are handled by the current model. If the support for stacked
 negative ACE is required it could be later implemented with a custom
-Solr QueryParser plugin that would derive from the JoinQueryParserPlugin
-further adding the negative filtering logic).
+Solr QueryParser plugin that would derive from the
+org.apache.solr.search.JoinQParserPlugin further adding the negative
+filtering logic).
 
 The other solr documents hold a `tree_id` (which is foreign reference to the
 parent tree node), the nuxeo doc ref and (optionally the parent ref),
